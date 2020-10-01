@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/navigation_graph"
+            app:startDestination="@id/startFragment">
+
+    <fragment android:id="@+id/startFragment" android:name="com.example.rudra888.fitness.StartFragment"
+              android:label="fragment_start" tools:layout="@layout/fitnessapp">
+        <action android:id="@+id/action_startFragment_to_exerciseFragment" app:destination="@id/exerciseFragment"/>
+    </fragment>
+    <fragment android:id="@+id/exerciseFragment" android:name="com.example.rudra888.fitness.ExerciseFragment"
+              android:label="fragment_exercise" tools:layout="@layout/fragment_exercise">
+        <action android:id="@+id/action_exerciseFragment_to_wellDoneFragment" app:destination="@id/wellDoneFragment"
+                app:popUpTo="@+id/exerciseFragment" app:popUpToInclusive="true"/>
+        <action android:id="@+id/action_exerciseFragment_to_tryAgainFragment" app:destination="@id/tryAgainFragment"
+                app:popUpTo="@+id/exerciseFragment" app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment android:id="@+id/wellDoneFragment" android:name="com.example.rudra888.fitness.WellDoneFragment"
+              android:label="fragment_well_done" tools:layout="@layout/well_done">
+        <action android:id="@+id/action_wellDoneFragment_to_exerciseFragment" app:destination="@id/exerciseFragment"
+                app:popUpTo="@+id/exerciseFragment"/>
+    </fragment>
+    <fragment android:id="@+id/tryAgainFragment" android:name="com.example.rudra888.fitness.TryAgainFragment"
+              android:label="fragment_try_again" tools:layout="@layout/Try Again">
+        <action android:id="@+id/action_tryAgainFragment_to_exerciseFragment" app:destination="@id/exerciseFragment"
+                app:popUpTo="@+id/exerciseFragment"/>
+    </fragment>
+    <fragment android:id="@+id/aboutFragment" android:name="com.example.rudra888.fitness.AboutFragment"
+              android:label="fragment_about" tools:layout="@layout/fragment_about"/>
+</navigation>
